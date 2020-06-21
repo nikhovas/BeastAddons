@@ -27,6 +27,18 @@ namespace http = beast::http;
 using tcp = boost::asio::ip::tcp;
 
 namespace boost::beast::addons::load::https {
+    namespace detail {
+        inline void load_root_certificates(ssl::context& ctx, boost::system::error_code& ec);
+    } // detail
+
+
+
+    inline void load_root_certificates(ssl::context& ctx, boost::system::error_code& ec);
+
+
+
+    inline void load_root_certificates(ssl::context& ctx);
+
     template<typename Executor>
     inline awaitable<std::string> get(const url &ref, int version, beast::ssl_stream<beast::tcp_stream> &stream,
             asio::use_awaitable_t<Executor> aw);

@@ -4,7 +4,7 @@
 namespace boost::beast::addons::load::https {
 
     namespace detail {
-        inline void load_root_certificates(ssl::context& ctx, boost::system::error_code& ec) {
+        void load_root_certificates(ssl::context& ctx, boost::system::error_code& ec) {
             std::string const cert =
                     "-----BEGIN CERTIFICATE-----\n"
                     "MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh\n"
@@ -63,13 +63,13 @@ namespace boost::beast::addons::load::https {
 
 
 
-    inline void load_root_certificates(ssl::context& ctx, boost::system::error_code& ec) {
+    void load_root_certificates(ssl::context& ctx, boost::system::error_code& ec) {
         detail::load_root_certificates(ctx, ec);
     }
 
 
 
-    inline void load_root_certificates(ssl::context& ctx) {
+    void load_root_certificates(ssl::context& ctx) {
         boost::system::error_code ec;
         detail::load_root_certificates(ctx, ec);
         if(ec)

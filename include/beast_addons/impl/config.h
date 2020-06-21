@@ -1,8 +1,11 @@
-//
-// Created by Николай Васильев on 21.06.2020.
-//
+#pragma once
 
-#ifndef BEASTADDONS_CONFIG_H
-#define BEASTADDONS_CONFIG_H
 
-#endif //BEASTADDONS_CONFIG_H
+#define BEASTADDONS
+
+
+#ifdef BOOST_VERSION
+    #define BEASTADDONS_NAMESPACE boost::beast::addons
+#elif BEAST_API_VERSION
+    #define BEASTADDONS_NAMESPACE beast::addons
+#endif

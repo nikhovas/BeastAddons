@@ -1,8 +1,7 @@
-//
-// Created by Николай Васильев on 21.06.2020.
-//
+#pragma once
 
-#ifndef BEASTADDONS_BEAST_ADDONS_H
-#define BEASTADDONS_BEAST_ADDONS_H
 
-#endif //BEASTADDONS_BEAST_ADDONS_H
+#include "beast_addons/url.h"
+#include "beast_addons/http_request.h"
+#include "beast_addons/https_request.h"
+#include "beast_addons/request.h"

@@ -24,10 +24,10 @@ using tcp = boost::asio::ip::tcp;
 
 namespace boost::beast::addons::load::http {
     template<typename Executor>
-    asio::awaitable <std::string> get(const url &url, int version, net::io_context &ioc, asio::use_awaitable_t<Executor>);
+    inline asio::awaitable <std::string> get(const url &url, int version, net::io_context &ioc, asio::use_awaitable_t<Executor>);
 
     template<typename Executor>
-    asio::awaitable<std::string> get(asio::io_context &executor, const url &url, asio::use_awaitable_t<Executor>);
+    inline asio::awaitable<std::string> get(asio::io_context &executor, const url &url, asio::use_awaitable_t<Executor>);
 }
 
 

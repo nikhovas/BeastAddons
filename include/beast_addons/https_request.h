@@ -28,15 +28,15 @@ using tcp = boost::asio::ip::tcp;
 
 namespace boost::beast::addons::load::https {
     template<typename Executor>
-    awaitable<std::string> get(const url &ref, int version, beast::ssl_stream<beast::tcp_stream> &stream,
+    inline awaitable<std::string> get(const url &ref, int version, beast::ssl_stream<beast::tcp_stream> &stream,
             asio::use_awaitable_t<Executor> aw);
 
     template<typename Executor>
-    awaitable<std::string> get(net::io_context &ioc, const url &ref, int version, ssl::context &ctx,
+    inline awaitable<std::string> get(net::io_context &ioc, const url &ref, int version, ssl::context &ctx,
             asio::use_awaitable_t<Executor> aw);
 
     template<typename Executor>
-    awaitable<std::string> get(net::io_context &ioc, const url &ref, asio::use_awaitable_t<Executor> aw);
+    inline awaitable<std::string> get(net::io_context &ioc, const url &ref, asio::use_awaitable_t<Executor> aw);
 }
 
 

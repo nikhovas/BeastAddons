@@ -8,14 +8,14 @@
 namespace boost::beast::addons {
     class url {
     public:
-        url() = default;
+        inline url() = default;
 
-        url(const std::string& url) {
+        inline url(const std::string& url) {
             set_from_string(url);
         }
 
 
-        operator std::string() const {
+        inline operator std::string() const {
             std::string result;
 
             if (protocol != "") {
@@ -31,7 +31,7 @@ namespace boost::beast::addons {
             return result;
         }
 
-        url& operator=(const std::string& url) {
+        inline url& operator=(const std::string& url) {
             set_from_string(url);
             return *this;
         }
@@ -55,7 +55,7 @@ namespace boost::beast::addons {
 }
 
 
-std::ostream& operator<<(std::ostream& stream, const boost::beast::addons::url& url) {
+inline std::ostream& operator<<(std::ostream& stream, const boost::beast::addons::url& url) {
     stream << static_cast<std::string>(url);
     return stream;
 }

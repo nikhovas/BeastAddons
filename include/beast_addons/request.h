@@ -8,10 +8,10 @@
 
 namespace boost::beast::addons::load {
     template<typename Executor>
-    asio::awaitable<std::string> get(asio::io_context &executor, const url &url, asio::use_awaitable_t<Executor>);
+    inline asio::awaitable<std::string> get(asio::io_context &executor, const url &url, asio::use_awaitable_t<Executor>);
 
     template<typename Executor>
-    asio::awaitable<std::string> get(asio::io_context &executor, const std::string &ref, asio::use_awaitable_t<Executor>);
+    inline asio::awaitable<std::string> get(asio::io_context &executor, const std::string &ref, asio::use_awaitable_t<Executor>);
 }
 
 
